@@ -32,18 +32,14 @@ const routes = express.Router();
     //response -> resposta ao usuário
 
 
-routes.post('/users', (request, response)=> {//arow function -> ("requisição", "resposta") => {'função'}
+routes.post('/ongs', (request, response)=> {//arow function -> ("requisição", "resposta") => {'função'}
 
     // const params = request.query; - Consigo acessar o que foi requisitado
     // const id = request.params; - Acesso o id da requisição
-    const body = request.body;// - acessa todo o corpo da requisição
-    console.log(body);
+    const data = request.body;// - acessa todo o corpo da requisição
+    console.log(data);
 
-    return response.json({
-        evento:'Semana Omnistack 11.0',
-        aluno:'Vinícius Olímpio'
-
-    });//resposta para o front-end
+    return response.json({});//resposta para o front-end
 
 });//seta a rota main "localhost:3030/"
 
