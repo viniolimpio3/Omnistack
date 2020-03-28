@@ -27,7 +27,7 @@ const routes = express.Router();
      * 
      *  - Request Body: Corpo da requisição, utilizado para criar ou alterar recursos (busca todo o corpo da requisição)
      */
-
+ 
     //request -> guarda todos os dados que vem da requisição feita na view!
     //response -> resposta ao usuário
 
