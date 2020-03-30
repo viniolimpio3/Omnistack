@@ -32,7 +32,7 @@ const routes = express.Router();
     //response -> resposta ao usuário
 
 
-routes.post('/ongs', (request, response)=> {//arow function -> ("requisição", "resposta") => {'função'}
+routes.post('/users', (request, response)=> {//arow function -> ("requisição", "resposta") => {'função'}
 
     // const params = request.query; - Consigo acessar o que foi requisitado
     // const id = request.params; - Acesso o id da requisição
