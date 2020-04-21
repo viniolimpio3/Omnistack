@@ -1,48 +1,26 @@
+//Importações
 const express = require('express');
 
 const routes = express.Router();
 
-//resumo de metodos http e requisições(request) e respostas(response)
-/*
-    https://ROTA/RECURSO("PAGINAS")
+//controllers
+const ongController = require('./controllers/ongController.js')
+const incidentController = require('./controllers/incidentController.js')
+const profileController = require('./controllers/profileController.js')
+const sessionController = require('./controllers/sessionController.js')
+// ROTAS
+// LISTA ONGS; CRIA ONGS (POST) (Posso ter diferentes métodos pra uma só rota)
+routes.get('/ongs', ongController.list);
+routes.post('/ongs', ongController.create);
 
-*/
+//LISTA CASOS; DELETA CASOS; CRIA CASO
+routes.get('/incidents',incidentController.list);
+routes.post('/incidents', incidentController.create);
+routes.delete('/incidents/:id', incidentController.remove);
 
-/* MÉTODOS HTTP - (REQUISIÇÕES) Quando for criar uma rota ( se eu usar somente o get, funciona, mas por uma questão de semântica existem essas diferenças )
-    (Navegador usa apenas o método get - é o 'que dá pra ver')
+//Perfil
+routes.get('/profile', profileController.list);
 
-    - GET - Buscar/Listar informações do backend .get('/recurso', function de retorno) - mostra na url
-    - POST - Criar informações no backend 
-    - PUT - Alterar informações no backend
-    - DELETE - Deletar informações no backend
-*/
+routes.post('/session', sessionController.createSession);
 
-/** PARÂMETROS PASSADOS PELAS ROTAS
- * 
- *  - Query Params: Parâmetros NOMEADOS enviados na rota seguido do sinal "?" (Serve p Filtros e Listas p/ exemplo)
- *      exemplo rota.com\recurso?aluno=Vinicius&evento=Omnistack -> traz todos os alunos com nome Vinicius....
- * 
- *  - Route Params: Parâmetros utilizados para identificar RECURSOS -> traz um perfil com um ÚNICO id p exemplo
- *      exemplo rota.com\recurso\{id} -> não preciso nomear qual entidade estou buscando, como nos query params
- * 
- *  - Request Body: Corpo da requisição, utilizado para criar ou alterar recursos (busca todo o corpo da requisição)
- */
-
-//request -> guarda todos os dados que vem da requisição feita na view!
-//response -> resposta ao usuário
-
-
-
-
-routes.post('/users', (request, response)=> {//arow function -> ("requisição", "resposta") => {'função'}
-
-    // const params = request.query; - Consigo acessar o que foi requisitado
-    // const id = request.params; - Acesso o id da requisição
-    const data = request.body;// - acessa todo o corpo da requisição
-    console.log(data);
-
-    return response.json({});//resposta para o front-end
-
-});//seta a rota main "localhost:3030/"
-
-module.exports = routes;//exportando var (específico do nodejs)
+module.exports = routes;//exportando routes para index.js
