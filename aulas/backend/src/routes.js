@@ -13,7 +13,7 @@ const sessionController = require('./controllers/sessionController.js')
 routes.get('/ongs', ongController.list);
 routes.post('/ongs', ongController.create);
 
-//LISTA CASOS; DELETA CASOS; CRIA CASO
+//LISTA CASOS;CRIA CASO; DELETA CASOS;
 routes.get('/incidents',incidentController.list);
 routes.post('/incidents', incidentController.create);
 routes.delete('/incidents/:id', incidentController.remove);
