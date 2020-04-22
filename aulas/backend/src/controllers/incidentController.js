@@ -7,7 +7,7 @@ module.exports = {
 
         const [count] = await connection('incidents').count();//retorna o índice 0 do array count[] -> conta quantos incidents existem
 
-        response.header('Total-Count', count['count(*)']); //retorna no header do response - a qtd de incidents
+        response.header('Total-Count-Incidents', count['count(*)']); //retorna no header do response - a qtd de incidents
 
         const casos = await connection('incidents')
             .join('ongs', 'ongs.id', '=' , 'incidents.id_ong')//busca dados de outra table

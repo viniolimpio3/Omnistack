@@ -3,7 +3,12 @@ const crypto = require('crypto');//modulo do nodejs -> nesse projeto uso para ge
 
 module.exports = { 
     async list(request, response){
+        //lógica de contagem de ongs
+        const [count] = await connection('ongs').count();
+        response.header('Total-Count-Ongs', count['count(*)']);
+        
         const ongs = await connection('ongs').select('*');//seleciona toda a tabela ongs
+        
         return response.json(ongs);
     },
     async create(request, response){

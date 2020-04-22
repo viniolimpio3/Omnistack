@@ -1,0 +1,79 @@
+.containerProfile{
+    width: 100%;
+    max-width: 1180px;
+    padding: 0 30px;
+    margin: 32px auto;
+
+}
+.containerProfile header{
+    display: flex;
+    align-items: center;
+}
+.containerProfile header span{
+    font-size: 20px;
+    margin-left: 24px;
+}
+.containerProfile header img{
+    height: 64px;
+}
+.containerProfile header a.button{
+    width: 260px;
+    margin-left: auto;
+    margin-top: 0;
+    text-align: center;
+  
+}
+.containerProfile header button{
+    height: 60px;
+    width: 60px;
+    border-radius: 4px;
+    border: 1px solid #dcdce6;
+    background: transparent !important;
+    transition: 500ms;
+    margin-left: 20px;
+}
+.containerProfile header button:hover{
+    border-color: #999;
+}
+
+.containerProfile h1{
+    margin-top: 80px;
+    margin-bottom: 24px;
+}
+.containerProfile ul{
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-gap:24px;
+    list-style: none;
+}
+
+.containerProfile ul li{
+    background: #fff;
+    padding: 24px;
+    border-radius: 8px;
+    position: relative;   
+}
+
+.containerProfile ul li button{
+    position: absolute;
+    right: 24px;
+    top: 24px;
+    border: 0;
+    
+}
+.containerProfile ul li button:hover{
+    opacity: 0.8;   
+}
+.containerProfile ul li strong{
+    display: block;
+    margin-bottom: 16px;
+    color: #41414d;
+}
+.containerProfile ul li p + strong{
+    margin-top: 32px;
+}
+.containerProfile ul li p{
+    color: #737380;
+    line-height: 21px;
+    font-size: 16px;
+}
