@@ -6,13 +6,12 @@ const routes = require('./routes');//importando um arquivo na própria pasta (./
 const app = express();
 
 app.use(cors());
-app.use(express.json()); // Os dados da requisição serão no formato json 
+app.use(express.json()); // Os dados da requisição serão no formato json
 app.use(routes);
 
  /** CHAMANDO SQL
   *     -Drivers: SELECT * FROM users; -> sql normal
-  *     -Query Builder(js): table('users').select('*').where() 
+  *     -Query Builder(js): table('users').select('*').where()
   */
 
 app.listen(3333);//porta pra acessar no localhost! - basicamente estou falando para o navegador "ouça minha aplicação na porta 3333"
-
